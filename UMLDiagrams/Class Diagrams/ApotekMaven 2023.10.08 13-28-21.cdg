@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ApotekMaven">
+  <ClassDiagramComponents>
+    <Class name="PasswordGenerator" package="apotek.application.repositories.services" visibility="public" xPosition="1742.0" yPosition="1906.0">
+      <Fields>
+        <Field name="CHARACTERS" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="PASSWORD_LENGTH" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="usedPasswords" type="Set&lt;String&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="generateRandomPassword" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="isPasswordUsed" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="addUsedPassword" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Admin" package="apotek.models" visibility="public" xPosition="209.0" yPosition="134.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="pass" type="String" visibility="private"/>
+        <Field name="CurrentUser" type="int" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="pass"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getPass" returnType="String" visibility="public"/>
+        <Method name="setPass" returnType="void" visibility="public">
+          <Argument type="String" name="pass"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Konsumen" package="apotek.models" visibility="public" xPosition="115.0" yPosition="1012.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="nama" type="String" visibility="private"/>
+        <Field name="username" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+        <Field name="daftarKonsumen" type="List&lt;Konsumen&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getNama" returnType="String" visibility="public"/>
+        <Method name="setNama" returnType="void" visibility="public">
+          <Argument type="String" name="nama"/>
+        </Method>
+        <Method name="getUsername" returnType="String" visibility="public"/>
+        <Method name="setUsername" returnType="void" visibility="public">
+          <Argument type="String" name="username"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="tambahKonsumen" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Konsumen" name="konsumen"/>
+        </Method>
+        <Method name="hapusKonsumen" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Konsumen" name="konsumen"/>
+        </Method>
+        <Method name="getDaftarObat" returnType="List&lt;Konsumen&gt;" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Obat" package="apotek.models" visibility="public" xPosition="209.0" yPosition="464.0">
+      <Fields>
+        <Field name="kode" type="String" visibility="private"/>
+        <Field name="nama" type="String" visibility="private"/>
+        <Field name="jenis" type="String" visibility="private"/>
+        <Field name="harga" type="String" visibility="private"/>
+        <Field name="stok" type="String" visibility="private"/>
+        <Field name="daftarObat" type="List&lt;Obat&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getKode" returnType="String" visibility="public"/>
+        <Method name="setKode" returnType="void" visibility="public">
+          <Argument type="String" name="kode"/>
+        </Method>
+        <Method name="getNama" returnType="String" visibility="public"/>
+        <Method name="setNama" returnType="void" visibility="public">
+          <Argument type="String" name="nama"/>
+        </Method>
+        <Method name="getJenis" returnType="String" visibility="public"/>
+        <Method name="setJenis" returnType="void" visibility="public">
+          <Argument type="String" name="jenis"/>
+        </Method>
+        <Method name="getHarga" returnType="String" visibility="public"/>
+        <Method name="setHarga" returnType="void" visibility="public">
+          <Argument type="String" name="harga"/>
+        </Method>
+        <Method name="getStok" returnType="String" visibility="public"/>
+        <Method name="setStok" returnType="void" visibility="public">
+          <Argument type="String" name="stok"/>
+        </Method>
+        <Method name="tambahObat" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Obat" name="obat"/>
+        </Method>
+        <Method name="hapusObat" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Obat" name="obat"/>
+        </Method>
+        <Method name="getDaftarObat" returnType="List&lt;Obat&gt;" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="LoginView" package="apotek.ui.auth" visibility="public" xPosition="607.0" yPosition="39.0">
+      <Fields>
+        <Field name="admin" type="Admin" visibility="private"/>
+        <Field name="mainFrame" type="MainFrame" visibility="private"/>
+        <Field name="btnLogin" type="javax.swing.JButton" visibility="private"/>
+        <Field name="id" type="javax.swing.JTextField" visibility="public" isStatic="true"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="pass" type="javax.swing.JPasswordField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainFrame" name="mainFrame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnLoginActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="idMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="idKeyReleased" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="passMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="passKeyReleased" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RegisterView" package="apotek.ui.auth" visibility="public" xPosition="1583.0" yPosition="2139.0">
+      <Fields>
+        <Field name="id" type="javax.swing.JTextField" visibility="public" isStatic="true"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="pass" type="javax.swing.JPasswordField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="idMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="idKeyReleased" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="passMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="passKeyReleased" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ApotekViewAdmin" package="apotek.ui.dashboard" visibility="public" xPosition="1394.0" yPosition="63.0">
+      <Fields>
+        <Field name="mainFrame" type="MainFrame" visibility="private"/>
+        <Field name="datakonsumen1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="datakonsumen2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainFrame" name="mainFrame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="datakonsumen1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="datakonsumen2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ApotekViewUser" package="apotek.ui.dashboard" visibility="public" xPosition="1583.0" yPosition="996.0">
+      <Fields>
+        <Field name="mainFrame" type="MainFrame" visibility="private"/>
+        <Field name="datakonsumen" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainFrame" name="mainFrame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="datakonsumenActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LaporanUserView" package="apotek.ui.dashboard" visibility="public" xPosition="1465.0" yPosition="1399.0">
+      <Fields>
+        <Field name="mainFrame" type="MainFrame" visibility="private"/>
+        <Field name="datakonsumen1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainFrame" name="mainFrame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="datakonsumen1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DataKonsumenView" package="apotek.ui.datakonsumen" visibility="public" xPosition="596.0" yPosition="1962.0">
+      <Fields>
+        <Field name="mainFrame" type="MainFrame" visibility="private"/>
+        <Field name="model" type="DefaultTableModel" visibility="public"/>
+        <Field name="daftarKonsumen" type="List&lt;Konsumen&gt;" visibility="private"/>
+        <Field name="konsumen" type="Konsumen" visibility="package"/>
+        <Field name="btnDelete" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnEdit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnExit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSimpan" type="javax.swing.JButton" visibility="private"/>
+        <Field name="inputId" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="inputNama" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="inputUsername" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tableKonsumen" type="javax.swing.JTable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainFrame" name="mainFrame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initTable" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnEditActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnExitActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnSimpanActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="inputIdActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="inputNamaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="inputUsernameActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnDeleteActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="tableKonsumenMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DataObatView" package="apotek.ui.dataobat" visibility="public" xPosition="640.0" yPosition="964.0">
+      <Fields>
+        <Field name="mainFrame" type="MainFrame" visibility="private"/>
+        <Field name="jenis" type="Obat" visibility="private"/>
+        <Field name="jenisObatButtonGroup" type="ButtonGroup" visibility="private"/>
+        <Field name="obat" type="Obat" visibility="private"/>
+        <Field name="model" type="DefaultTableModel" visibility="public"/>
+        <Field name="obatList" type="List&lt;Obat&gt;" visibility="private"/>
+        <Field name="btnEdit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnHapus" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnKeluar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSimpan" type="javax.swing.JButton" visibility="private"/>
+        <Field name="hargaInput" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="kodeInput" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="namaInput" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="opsiCair" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="opsiKapsul" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="opsiSirup" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="opsiTablet" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="stokInput" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="tableObat" type="javax.swing.JTable" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainFrame" name="mainFrame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnSimpanActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="initTable" returnType="void" visibility="private"/>
+        <Method name="btnEditActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnHapusActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnKeluarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="kodeInputActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="opsiSirupActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="opsiCairActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="opsiKapsulActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="opsiTabletActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="stokInputActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="hargaInputActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="namaInputActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="tableObatMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LaporanObatView" package="apotek.ui.laporan" visibility="public" xPosition="607.0" yPosition="526.0">
+      <Fields>
+        <Field name="mainFrame" type="MainFrame" visibility="private"/>
+        <Field name="model" type="DefaultTableModel" visibility="public"/>
+        <Field name="obatList" type="List&lt;Obat&gt;" visibility="private"/>
+        <Field name="obat" type="Obat" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tableObat" type="javax.swing.JTable" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainFrame" name="mainFrame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="initTable" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="MainFrame" package="apotek.ui" visibility="public" xPosition="1394.0" yPosition="543.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="showView" returnType="void" visibility="public">
+          <Argument type="JPanel" name="view"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="daftarKonsumen" source="apotek.models.Konsumen" target="apotek.models.Konsumen" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Konsumen&gt;"/>
+    <HasRelation name="obat" source="apotek.ui.laporan.LaporanObatView" target="apotek.models.Obat" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="konsumen" source="apotek.ui.datakonsumen.DataKonsumenView" target="apotek.models.Konsumen" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainFrame" source="apotek.ui.dashboard.ApotekViewUser" target="apotek.ui.MainFrame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainFrame" source="apotek.ui.laporan.LaporanObatView" target="apotek.ui.MainFrame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="apotek.models.Obat" target="apotek.models.Obat" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainFrame" source="apotek.ui.datakonsumen.DataKonsumenView" target="apotek.ui.MainFrame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jenis" source="apotek.ui.dataobat.DataObatView" target="apotek.models.Obat" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="daftarObat" source="apotek.models.Obat" target="apotek.models.Obat" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Obat&gt;"/>
+    <UseRelation source="apotek.models.Konsumen" target="apotek.models.Konsumen" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="daftarKonsumen" source="apotek.ui.datakonsumen.DataKonsumenView" target="apotek.models.Konsumen" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Konsumen&gt;"/>
+    <HasRelation name="obatList" source="apotek.ui.dataobat.DataObatView" target="apotek.models.Obat" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Obat&gt;"/>
+    <HasRelation name="obat" source="apotek.ui.dataobat.DataObatView" target="apotek.models.Obat" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainFrame" source="apotek.ui.dashboard.LaporanUserView" target="apotek.ui.MainFrame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="admin" source="apotek.ui.auth.LoginView" target="apotek.models.Admin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainFrame" source="apotek.ui.dataobat.DataObatView" target="apotek.ui.MainFrame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainFrame" source="apotek.ui.dashboard.ApotekViewAdmin" target="apotek.ui.MainFrame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="obatList" source="apotek.ui.laporan.LaporanObatView" target="apotek.models.Obat" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Obat&gt;"/>
+    <HasRelation name="mainFrame" source="apotek.ui.auth.LoginView" target="apotek.ui.MainFrame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

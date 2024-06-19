@@ -1,0 +1,36 @@
+MainFrame.java
+LoginView -> MainFrame (Composition)
+
+LoginView.java
+MainFrame -> LoginView (Association)
+Admin -> LoginView (composition)
+Konsumen -> LoginView (Association)
+ApotekViewAdmin -> LoginView (Aggregation)
+ApotekViewUser -> LoginView (Aggregation)
+
+ApotekViewAdmin.java
+MainFrame -> ApotekViewAdmin (Association)
+LoginView -> ApotekViewAdmin (Aggregation)
+DataObatView -> ApotekViewAdmin (Aggregation)
+DataKonsumenView -> ApotekViewAdmin (Aggregation)
+
+DataObatView.java
+MainFrame -> DataObatView (Association)
+Obat -> DataObatView (Composition)
+ApotekViewAdmin -> DataObatView(Aggregation)
+
+DataKonsumenView.java
+MainFrame -> DataKonsumenView (Association)
+Konsumen -> DataKonsumenView (Composition)
+ApotekViewAdmin -> DataKonsumenView (Aggregation)
+
+ApotekViewUser.java
+MainFrame -> ApotekViewUser (Association)
+LoginView -> ApotekViewUser (Aggregation)
+LaporanObatView -> ApotekViewUser (Aggregation)
+
+LaporanObatView.java
+MainFrame -> LaporanObatView (Association)
+ApotekViewUser -> LaporanObatView (Aggregation)
+Obat -> LaporanObatView (Association)
+
